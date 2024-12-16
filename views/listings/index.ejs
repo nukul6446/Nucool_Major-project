@@ -4,15 +4,24 @@
 <body>
     <h3>All Listings</h3>
  
-    <form method="get" action="listings/new">
+    <!-- <form method="get" action="listings/new">
         <button>Create Post</button>
-    </form>  
-
+    </form>   -->
+     
+        <% for (let listing of allListings) { %>
+          <div class="card" style="width: 20rem;">
+            <img src="<%= listing.image %>" alt="<%= listing.name %>">
+            <% console.log(listing.image); %>
+                        <div class="card-body">
+              <h5 class="card-title"><%= listing.name %></h5>
+              <p class="card-text">Rs<%= listing.price %>/night</p>
+            </div>
+          </div>
+        <% } %> 
     <ul>   
         <% for (let listing of allListings) { %>
            <li>
                 <a href="/listings/<%= listing._id %>"><%= listing.name %></a>
-                </li>  
         <% } %>
     </ul>  
 </body>

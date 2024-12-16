@@ -28,10 +28,12 @@ app.engine("ejs",ejsMate);
 app.use(express.static(path.join(__dirname ,"/public")));
 app.get("/hi",(req,res)=>{ 
     res.send("i am root");
-})
+})  
+
 //INDEX ROUTE
 app.get("/listings", async (req, res) => {
-   const allListings = await Listing.find({}); 
+    
+    const allListings = await Listing.find({ name: { $exists: true, $ne: "" } });
    
       res.render("listings/index.ejs", {allListings });
 });
@@ -56,6 +58,7 @@ app.get("/listings/:id/edit",async(req,res)=>{
 //update route
  app.put("/listings/:id",async(req,res)=>{
     let {id} = req.params;
+    console.log('Image URL:', listing.image);
     await Listing.findByIdAndUpdate(id,{...req.body.listing});
     res.redirect("/listings");
  })

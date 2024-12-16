@@ -11,11 +11,11 @@
         <li>Title: <%= listing.name %></li>
         <li>Location: <%= listing.location %></li>
         <li>Country: <%= listing.country %></li>
-        <li>Price: <%= listing.price %></li>
+        <li>Price: <%= listing.price.toLocaleString("en-In") %></li>
         <li>description: <%= listing.description %></li>
         <li>Amenities: <%= listing.amenities %></li>
     </ul>
-    <a href="/listings/<%=listing._id %>/edit">edit listing</a>
+    <a href="/listings/<%= listing._id %>/edit">edit listing</a>
     <br><br>
 
     <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">

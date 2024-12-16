@@ -1,2 +1,39 @@
-  
-  
+.navbar{
+    height: 5rem;
+    background-color: white;
+}
+.fa-compass{
+    color: #fe424d;
+    font-size: 2rem;
+}
+.nav-link{
+    color: #222222 !important;
+}
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links a:hover{  
+    text-decoration: underline;
+}
+.f-info-links,
+.f-info-social{
+    width: 100%;
+    vertical-align: middle;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-social i{
+    font-size: 1.3rem;
+margin-right:1rem ;
+}
+.f-info{
+height: 8rem;
+background-color: #ebebeb;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items:space-evenly;
+text-align: center;
+}
